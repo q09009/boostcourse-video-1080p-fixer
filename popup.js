@@ -19,9 +19,9 @@ chrome.storage.local.get(['res'], (result) => {
 });
 
 chrome.storage.local.get(['vol'], (result) => {
-    if(result.savedSound) {
-        soundSlider.value = result.savedSound;
-        soundVal.innerText = result.savedSound;
+    if(result.vol) {
+        soundSlider.value = result.vol;
+        soundVal.innerText = result.vol;
     }
 });
 

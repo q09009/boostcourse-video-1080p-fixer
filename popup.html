@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body style="width: 190px; height: 150px;">
+    <h3>부스트코스 동영상 설정</h3>
+    
+    <div class="setting-item">
+    <label for="delay-range">설정 대기 시간 (0.5초 ~ 3초)</label>
+    <input type="range" id="delay-range" min="500" max="3000" step="100" value="1000">
+    <span id="delay-value">1초</span><br>
+    <label for="res">화질 설정 </label>
+    <select id="res">
+        <option selected>1080p</option>
+        <option>720p</option>
+    </select>
+    </div>
+    <script src="popup.js"></script>
+
+</body>
+</html>

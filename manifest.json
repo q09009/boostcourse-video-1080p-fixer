@@ -1,0 +1,17 @@
+{
+    "manifest_version" : 3,
+    "name" : "부스트코스 1080p 자동 설정",
+    "version" : "1.0",
+    "description" : "네이버 플레이어 화질을 자동으로 1080p로 변경합니다.",
+    "permissions" : ["activeTab", "storage"],
+    "content_scripts" : [
+        {
+            "matches" : ["*://*.boostcourse.org/*"],
+            "js" : ["index.js"]
+        }
+    ],
+    "action" : {
+        "default_popup" : "popup.html"
+    }
+    
+}

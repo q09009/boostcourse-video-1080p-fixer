@@ -8,7 +8,7 @@ const soundVal = document.querySelector('#sound-value');
 chrome.storage.local.get(['savedDelay'], (result) => {
     if(result.savedDelay) {
         slider.value = result.savedDelay;
-        display.innerText = result.savedDelay;
+        display.innerText = result.savedDelay/1000 + "초";
     }
 });
 
@@ -21,7 +21,7 @@ chrome.storage.local.get(['res'], (result) => {
 chrome.storage.local.get(['vol'], (result) => {
     if(result.vol) {
         soundSlider.value = result.vol;
-        soundVal.innerText = result.vol;
+        soundVal.innerText = result.vol + '%';
     }
 });
 

@@ -1,6 +1,6 @@
 function setMaxQuality() {
 
-    let res;
+    let res, vol;
     chrome.storage.local.get(['res'], (result) => {
         if(!result.res) {
             res = '1080p';
@@ -10,6 +10,16 @@ function setMaxQuality() {
         }
         
         console.log(res + "로 화질 자동변경");
+    })
+
+    chrome.storage.local.get(['vol'], (result) => {
+        if(!result.vol) {
+            vol = 1;
+        }
+        else {
+            vol = Number(result.vol)/100;
+        }
+        console.log("소리크기 : " + vol);
     })
 
     // 1. 설정(톱니바퀴) 버튼 클릭
@@ -37,6 +47,8 @@ function setMaxQuality() {
 
         }, 100);
         }
+        const video = document.querySelector('video');
+        video.volume = vol;
     }, 100);
 }
 

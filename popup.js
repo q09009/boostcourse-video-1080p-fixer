@@ -5,25 +5,23 @@ const soundSlider = document.querySelector('#sound-range');
 const soundVal = document.querySelector('#sound-value');
 
 //팝업이 열릴때 저장된 값 세팅
-chrome.storage.local.get(['savedDelay'], (result) => {
+
+chrome.storage.local.get(['savedDelay', 'res', 'vol'], (result) => {
     if(result.savedDelay) {
         slider.value = result.savedDelay;
         display.innerText = result.savedDelay/1000 + "초";
     }
-});
 
-chrome.storage.local.get(['res'], (result) => {
     if(result.res) {
         resolution.value = result.res;
     }
-});
 
-chrome.storage.local.get(['vol'], (result) => {
     if(result.vol) {
         soundSlider.value = result.vol;
         soundVal.innerText = result.vol + '%';
     }
-});
+
+})
 
 slider.addEventListener('input', () => {
     const val = slider.value;
